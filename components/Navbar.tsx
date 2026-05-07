@@ -13,9 +13,18 @@ export function Navbar() {
         </div>
 
         <div className="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
-          <a className="transition hover:text-slate-900" href="#featured">Featured</a>
-          <a className="transition hover:text-slate-900" href="#categories">Categories</a>
-          <a className="transition hover:text-slate-900" href="#">How it works</a>
+          <a className="transition hover:text-slate-900" href="#hot-deals">
+            Hot deals
+          </a>
+          <a className="transition hover:text-slate-900" href="#categories">
+            Categories
+          </a>
+          <a className="transition hover:text-slate-900" href="#featured">
+            Featured
+          </a>
+          <a className="transition hover:text-slate-900" href="#start-selling">
+            Sell on ZipZap
+          </a>
         </div>
 
         <button className="rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow transition hover:-translate-y-0.5 hover:bg-slate-800">

@@ -30,7 +30,7 @@ export default function ListingCard({ listing }: { listing: Listing }) {
 
         <div className="flex items-center justify-between text-xs text-slate-500 sm:text-sm">
           <span>{listing.location}</span>
-          <span>Seller: {listing.seller}</span>
+          <span>{listing.seller}</span>
         </div>
       </div>
     </article>
