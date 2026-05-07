@@ -1,5 +1,11 @@
 import ListingCard from "../components/ListingCard";
 
+const hotDeals = [
+  { id: 1, title: "iPhone 14 Pro - 256GB", location: "San Jose, CA", price: "$640", badge: "12% below market" },
+  { id: 2, title: "Patio set (4 chairs + table)", location: "Phoenix, AZ", price: "$210", badge: "Fast pickup" },
+  { id: 3, title: "PlayStation 5 bundle", location: "Dallas, TX", price: "$420", badge: "Hot today" },
+];
+
 const categories = [
   "Electronics",
   "Home",
@@ -8,6 +14,7 @@ const categories = [
   "Sports",
   "Collectibles",
   "Services",
+  "Pets",
 ];
 
 const listings = [
@@ -61,10 +68,10 @@ export default function HomePage() {
           ZipZap Marketplace
         </p>
         <h1 className="max-w-2xl text-3xl font-extrabold leading-tight sm:text-5xl">
-          Buy and sell safely on ZipZap
+          Find great local deals in minutes
         </h1>
         <p className="mt-4 max-w-2xl text-sm text-slate-200 sm:text-base">
-          Discover local deals, trusted sellers, and verified listings in a cleaner, safer experience.
+          Browse verified sellers, compare prices nearby, and safely buy or sell in your community.
         </p>
 
         <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -78,7 +85,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="categories" className="mt-8">
+      <section id="hot-deals" className="mt-10">
+        <div className="mb-4 flex items-end justify-between">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">Hot deals near you</h2>
+          <a href="#" className="text-sm font-semibold text-indigo-600 hover:text-indigo-500">
+            View local map
+          </a>
+        </div>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {hotDeals.map((deal) => (
+            <article key={deal.id} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <p className="inline-flex rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+                {deal.badge}
+              </p>
+              <h3 className="mt-3 text-base font-bold text-slate-900">{deal.title}</h3>
+              <p className="mt-1 text-sm text-slate-500">{deal.location}</p>
+              <p className="mt-4 text-xl font-extrabold text-indigo-600">{deal.price}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="categories" className="mt-10">
+        <div className="mb-4 flex items-end justify-between">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">Shop by category</h2>
+        </div>
         <div className="flex flex-wrap gap-3">
           {categories.map((category) => (
             <button
@@ -102,6 +133,21 @@ export default function HomePage() {
           {listings.map((listing) => (
             <ListingCard key={listing.id} listing={listing} />
           ))}
+        </div>
+      </section>
+
+      <section id="start-selling" className="mt-12 rounded-3xl border border-indigo-100 bg-indigo-50 px-6 py-10 sm:px-10">
+        <h2 className="text-2xl font-bold tracking-tight text-slate-900">Start selling on ZipZap</h2>
+        <p className="mt-3 max-w-2xl text-sm text-slate-600 sm:text-base">
+          Create a listing in under 2 minutes, chat with real buyers, and close deals safely with in-app verification.
+        </p>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <button className="h-11 rounded-xl bg-slate-900 px-5 text-sm font-semibold text-white transition hover:bg-slate-800">
+            Post your first listing
+          </button>
+          <button className="h-11 rounded-xl border border-slate-300 bg-white px-5 text-sm font-semibold text-slate-700 transition hover:border-slate-400">
+            Learn selling tips
+          </button>
         </div>
       </section>
     </main>

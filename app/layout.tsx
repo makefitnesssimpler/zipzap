@@ -4,7 +4,7 @@ import { Navbar } from "../components/Navbar";
 
 export const metadata: Metadata = {
   title: "ZipZap Marketplace",
-  description: "Buy and sell safely on ZipZap",
+  description: "Buy, sell, and discover hot local deals on ZipZap",
 };
 
 export default function RootLayout({
